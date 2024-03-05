@@ -38,7 +38,7 @@ async function login(req, res) {
         if(!passwordMatch){
             return res.send("Wrong password")
         }
-        const btkn = jwt.sign({ name: req.body.name }, secret_key, {expiresIn: "20000s"});
+        const btkn = jwt.sign({ userId: check._id }, secret_key, {expiresIn: "20000s"});
         let token = "Bearer " + btkn;
         res.send(token);
 
